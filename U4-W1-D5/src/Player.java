@@ -57,7 +57,27 @@ public class Player {
 
         //---------------------------------------Execution of the elements:------------------------------------
 
-        
+        System.out.println("Now, you have created a playlist with your multimedia items created before.");
+        int choice;
+        do {
+            System.out.println("If you want to execute your multimedia, insert a number from 1 to 5 (or 0 to exit):");
+             choice = Integer.parseInt(scanner.nextLine());
+
+            if (choice >= 1 && choice <= 5) {
+                MultimediaItem itemChosen = elements[choice - 1];
+                if (itemChosen instanceof AudioRecording) {
+                    System.out.println("Playing audio...");
+                    ((AudioRecording) itemChosen).play();
+                } else if (itemChosen instanceof Video) {
+                    ((Video) itemChosen).play();
+                } else if (itemChosen instanceof Image) {
+                    ((Image) itemChosen).show();
+                }
+            } else if (choice != 0) {
+                System.out.println("Invalid choice. Please enter a number from 1 to 5 (or 0 to exit).");
+            }
+        } while (choice != 0);
+
 
     }
 }
