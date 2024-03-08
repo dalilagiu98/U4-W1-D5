@@ -13,6 +13,11 @@ public class Image extends MultimediaItem implements Brightness {
         this.brightness = brightness;
     }
 
+    //METHOD:
+    public void show() {
+        System.out.println( title + " " + "*".repeat(brightness));
+    }
+
 
     //INTERFACES METHODS:
     @Override
@@ -25,5 +30,10 @@ public class Image extends MultimediaItem implements Brightness {
         if (this.brightness > 0) {
             this.brightness--;
         }
+    }
+
+    //SETTER:
+    public void setBrightness(int brightness) {
+        this.brightness = brightness;
     }
 }

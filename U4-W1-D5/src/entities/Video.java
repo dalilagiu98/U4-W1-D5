@@ -50,4 +50,14 @@ public class Video extends MultimediaItem implements Executable, Brightness {
             this.brightness--;
         }
     }
+
+    //SETTER:
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+
+    public void setBrightness(int brightness) {
+        this.brightness = brightness;
+    }
 }

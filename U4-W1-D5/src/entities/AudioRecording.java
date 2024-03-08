@@ -15,9 +15,7 @@ public class AudioRecording extends MultimediaItem implements Executable {
         this.duration = duration;
     }
 
-    //METHODS:
-
-
+    //INTERFACES METHODS:
     @Override
     public void play() {
         for (int i = 0; i < duration; i++){
@@ -32,5 +30,11 @@ public class AudioRecording extends MultimediaItem implements Executable {
         if (volume > 0 ) { //solo se il volume è maggiore di zero (per non rendere il volume negativo)
             volume--;
         }
+    }
+
+    //SETTER:
+
+    public void setVolume(int volume) {
+        this.volume = volume;
     }
 }
