@@ -7,14 +7,14 @@ import java.util.Scanner;
 
 public class Player {
     public static void main(String[] args) {
-        MultimediaItem[] elements = new MultimediaItem[5];
+        MultimediaItem[] elements = new MultimediaItem[1];
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("* Playing Ground Theme - Super Mario Bros. in background...*");
         System.out.println("Hello welcome in our player!");
 
         //-------------------------------Initializing objects of array--------------------------------------
-        for (int i = 0; i < 5; i++){
+        for (int i = 0; i < 1; i++){
             System.out.println("Please insert the type of the element you want to create: 1 -> audio recoding; 2 -> video; 3 -> image");
             int type = Integer.parseInt(scanner.nextLine());
             System.out.println("Now please insert the title of the element you want to create:");
@@ -65,9 +65,33 @@ public class Player {
 
             if (choice >= 1 && choice <= 5) {
                 MultimediaItem itemChosen = elements[choice - 1];
+
                 if (itemChosen instanceof AudioRecording) {
                     System.out.println("Playing audio...");
                     ((AudioRecording) itemChosen).play();
+                    //----------TURN UP/DOWN VOLUME AUDIO -----------
+                    System.out.println("Do you want to turn up the volume? Answer Y/N");
+                    String answer = scanner.nextLine().toUpperCase();
+                    if( answer.equals("Y")) {
+                        ((AudioRecording) itemChosen).turnUpVolume();
+                        ((AudioRecording) itemChosen).play();
+                    }
+                    System.out.println("Do you want to turn down the volume? Answer Y/N");
+                    String answerTwo = scanner.nextLine().toUpperCase();
+                    if( answerTwo.equals("Y")) {
+                        ((AudioRecording) itemChosen).turnDownVolume();
+                        ((AudioRecording) itemChosen).play();
+                    }
+                   //--------------SET VOLUME AUDIO:---------------
+                    System.out.println("Do you want to set manually the volume? Answer Y/N");
+                    String answerSet = scanner.nextLine().toUpperCase();
+                    if(answerSet.equals("Y")) {
+                        System.out.println("Insert a new value for the volume as integer:");
+                        int volume = Integer.parseInt(scanner.nextLine());
+                        ((AudioRecording) itemChosen).setVolume(volume);
+                        ((AudioRecording) itemChosen).play();
+                    }
+
                 } else if (itemChosen instanceof Video) {
                     ((Video) itemChosen).play();
                 } else if (itemChosen instanceof Image) {
