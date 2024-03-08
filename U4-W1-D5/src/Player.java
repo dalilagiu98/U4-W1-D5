@@ -202,6 +202,6 @@ public class Player {
 
         System.out.println("You have choose to turn off the player, goodbye!");
         System.out.println("Closing player...");
-
+        scanner.close();
     }
 }
