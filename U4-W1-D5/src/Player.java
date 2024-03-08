@@ -69,6 +69,7 @@ public class Player {
                 if (itemChosen instanceof AudioRecording) {
                     System.out.println("Playing audio...");
                     ((AudioRecording) itemChosen).play();
+                    System.out.println("------------------------------------------------");
                     //----------TURN UP/DOWN VOLUME AUDIO -----------
                     System.out.println("Do you want to turn up the volume? Answer Y/N");
                     String answer = scanner.nextLine().toUpperCase();
@@ -76,12 +77,14 @@ public class Player {
                         ((AudioRecording) itemChosen).turnUpVolume();
                         ((AudioRecording) itemChosen).play();
                     }
+                    System.out.println("------------------------------------------------");
                     System.out.println("Do you want to turn down the volume? Answer Y/N");
                     String answerTwo = scanner.nextLine().toUpperCase();
                     if( answerTwo.equals("Y")) {
                         ((AudioRecording) itemChosen).turnDownVolume();
                         ((AudioRecording) itemChosen).play();
                     }
+                    System.out.println("------------------------------------------------");
                    //--------------SET VOLUME AUDIO:---------------
                     System.out.println("Do you want to set manually the volume? Answer Y/N");
                     String answerSet = scanner.nextLine().toUpperCase();
@@ -91,9 +94,66 @@ public class Player {
                         ((AudioRecording) itemChosen).setVolume(volume);
                         ((AudioRecording) itemChosen).play();
                     }
+                    System.out.println("------------------------------------------------");
 
                 } else if (itemChosen instanceof Video) {
+                    System.out.println("Playing video...");
                     ((Video) itemChosen).play();
+
+                    //----------TURN UP/DOWN VOLUME VIDEO -----------
+                    System.out.println("Do you want to turn up the volume? Answer Y/N");
+                    String answerVideoVolume = scanner.nextLine().toUpperCase();
+                    if( answerVideoVolume.equals("Y")) {
+                        ((Video) itemChosen).turnUpVolume();
+                        ((Video) itemChosen).play();
+                    }
+                    System.out.println("------------------------------------------------");
+                    System.out.println("Do you want to turn down the volume? Answer Y/N");
+                    String answerVideoVolumeTwo = scanner.nextLine().toUpperCase();
+                    if( answerVideoVolumeTwo.equals("Y")) {
+                        ((Video) itemChosen).turnDownVolume();
+                        ((Video) itemChosen).play();
+                    }
+                    System.out.println("------------------------------------------------");
+
+                    //----------TURN UP/DOWN BRIGHTNESS VIDEO -----------
+                    System.out.println("Do you want to increase the brightness? Answer Y/N");
+                    String answerVideoBrightness = scanner.nextLine().toUpperCase();
+                    if(answerVideoBrightness.equals("Y")) {
+                        ((Video) itemChosen).increaseBrightness();
+                        ((Video) itemChosen).play();
+                    }
+                    System.out.println("------------------------------------------------");
+                    System.out.println("Do you want to decrease the brightness? Answer Y/N");
+                    String answerVideoBrightnessTwo = scanner.nextLine().toUpperCase();
+                    if(answerVideoBrightnessTwo.equals("Y")){
+                        ((Video) itemChosen).decreaseBrightness();
+                        ((Video) itemChosen).play();
+                    }
+                    System.out.println("------------------------------------------------");
+
+                    //--------------SET VOLUME VIDEO:---------------
+                    System.out.println("Do you want to set the volume manually? Answer Y/N");
+                    String answerSetVideo = scanner.nextLine().toUpperCase();
+                    if(answerSetVideo.equals("Y")) {
+                        System.out.println("Insert a new value for the volume as integer:");
+                        int volumeVideo = Integer.parseInt(scanner.nextLine());
+                        ((Video) itemChosen).setVolume(volumeVideo);
+                        ((Video) itemChosen).play();
+                    }
+                    System.out.println("------------------------------------------------");
+
+                    //--------------SET BRIGHTNESS VIDEO:---------------
+                    System.out.println("Do you want to set the brightness manually? Answer Y/N");
+                    String answerSetBrightnessVideo = scanner.nextLine().toUpperCase();
+                    if(answerSetBrightnessVideo.equals("Y")) {
+                        System.out.println("Insert a new value for the brightness as integer:");
+                        int brightnessVideo = Integer.parseInt(scanner.nextLine());
+                        ((Video) itemChosen).setBrightness(brightnessVideo);
+                        ((Video) itemChosen).play();
+                    }
+
+
                 } else if (itemChosen instanceof Image) {
                     ((Image) itemChosen).show();
                 }
