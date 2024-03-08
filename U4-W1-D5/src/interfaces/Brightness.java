@@ -1,5 +1,5 @@
 package interfaces;
-//Creo quest'interfaccia per fare in modo che questa possa essere implementanta in Video e Image
+//I create this interface so that it can be implemented in Video and Image
 public interface Brightness {
     public void increaseBrightness();
     public void decreaseBrightness();

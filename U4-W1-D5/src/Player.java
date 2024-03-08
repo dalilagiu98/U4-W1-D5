@@ -195,7 +195,7 @@ public class Player {
                         ((Image) itemChosen).show();
                     }
                     System.out.println("------------------------------------------------");
-                    
+
                 }
             }
         } while (choice != 0);

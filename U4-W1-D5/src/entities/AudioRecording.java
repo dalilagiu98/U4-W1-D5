@@ -19,7 +19,7 @@ public class AudioRecording extends MultimediaItem implements Executable {
     @Override
     public void play() {
         for (int i = 0; i < duration; i++){
-            System.out.println(this.title + " " + "!".repeat(volume)); //uso il metodo delle stringhe repeat() sulla stringa "!" per fare in modo che la stringa sia ripetuta quante volte il parametro passato dal volume
+            System.out.println(this.title + " " + "!".repeat(volume)); //I use the repeat() string method on the string "!" to ensure that the string is repeated as many times as the parameter passed by the volume
         }
     }
 
@@ -27,7 +27,7 @@ public class AudioRecording extends MultimediaItem implements Executable {
         volume++;
     }
     public void turnDownVolume() {
-        if (volume > 0 ) { //solo se il volume è maggiore di zero (per non rendere il volume negativo)
+        if (volume > 0 ) { //only if the volume is greater than zero (so as not to make the volume negative)
             volume--;
         }
     }

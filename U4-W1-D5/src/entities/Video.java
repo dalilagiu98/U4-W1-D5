@@ -35,7 +35,7 @@ public class Video extends MultimediaItem implements Executable, Brightness {
     @Override
     public void turnDownVolume() {
         if(this.volume > 0) {
-            this.volume--; //solo se il volume è maggiore di zero (per non rendere il volume negativo)
+            this.volume--; //only if the volume is greater than zero (so as not to make the volume negative)
         }
     }
 
