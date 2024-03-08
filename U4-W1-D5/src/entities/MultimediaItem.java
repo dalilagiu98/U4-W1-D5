@@ -1,6 +1,6 @@
 package entities;
 
-abstract class MultimediaItem {
+public abstract class MultimediaItem {
 
     //ATTRIBUTES LIST:
     protected String title;
