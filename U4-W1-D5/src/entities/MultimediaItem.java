@@ -3,7 +3,7 @@ package entities;
 abstract class MultimediaItem {
 
     //ATTRIBUTES LIST:
-    private String title;
+    protected String title;
 
     //CONSTRUCTORS:
 
